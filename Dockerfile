@@ -1,5 +1,5 @@
-ARG BASIS=ubuntu:jammy
-FROM $BASIS
+ARG BASIS=ros:humble
+FROM $BASIS as opendds
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
@@ -32,3 +32,4 @@ ENV ACE_ROOT=/usr/local/share/ace \
 
 WORKDIR /opt/workspace
 
+FROM opendds as ros
