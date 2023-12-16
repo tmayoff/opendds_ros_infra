@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/tmayoff/opendds_ros_infra
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          submodules: true
+
+      - name: Setup ros workspace
+        run: ./rmw_build/create_workspace.sh
+
+      - name: Build all
+        run: ./rmw_build/build_all.sh
