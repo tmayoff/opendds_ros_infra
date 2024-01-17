@@ -1,3 +1,4 @@
 [submodule "rmw_build"]
 	path = rmw_build
-	url = git@github.com:tmayoff/rmw_build.git
+    url = git@github.com:tmayoff/rmw_build.git
+    branch = humble
