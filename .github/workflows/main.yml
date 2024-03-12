@@ -25,3 +25,6 @@ jobs:
 
       - name: Build all
         run: ./rmw_build/build_all.sh
+
+      - name: Run CI tests
+        run: ./rmw_build/run_ci_tests.sh
