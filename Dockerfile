@@ -16,11 +16,12 @@ RUN apt-get update && apt-get install -y \
 RUN curl https://apt.kitware.com/kitware-archive.sh -o kitware-archive.sh && chmod +x kitware-archive.sh && ./kitware-archive.sh
 RUN apt-get -y update && apt-get -y install cmake
 
-RUN git clone https://github.com/OpenDDS/OpenDDS.git -b DDS-3.26.1 /opt/OpenDDS
+RUN git clone https://github.com/OpenDDS/OpenDDS.git -b DDS-3.27 /opt/OpenDDS
 
 # WORKDIR /opt/OpenDDS
 # RUN cmake -S . -B build -G Ninja 
 # RUN cmake --build build
+# RUN cd build && ninja install
 
 ARG ACE_CONFIG_OPTION="--doc-group"
 RUN cd /opt/OpenDDS && \

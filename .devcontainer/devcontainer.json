@@ -3,6 +3,11 @@
 {
 	"name": "ROS2 & OpenDDS",
 	"image": "ghcr.io/tmayoff/opendds_ros_infra",
+	// "build": {
+	// 	"dockerfile": "../Dockerfile",
+	// 	"context": "../",
+	// 	"target": "ros"
+	// },
 	"features": {
 		"ghcr.io/christophermacgown/devcontainer-features/direnv:1": {
 			"autoEnable": true,
@@ -16,7 +21,8 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.cmake-tools",
 				"ms-python.python",
-				"llvm-vs-code-extensions.vscode-clangd"
+				"llvm-vs-code-extensions.vscode-clangd",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
