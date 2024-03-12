@@ -30,3 +30,7 @@ ENV ACE_ROOT=/usr/local/share/ace \
 WORKDIR /opt/workspace
 
 FROM opendds as ros
+
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install ros-humble-turtlesim
