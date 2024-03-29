@@ -23,6 +23,8 @@ jobs:
 
       - uses: root-project/gcc-problem-matcher-improved@v0.0.1-alpha.1
 
+      - run: rosdep update && make rosdep
+
       - name: Build all
         run: ./rmw_build/build_all.sh
 
