@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/install/examples_rclcpp_minimal_publisher/lib/examples_rclcpp_minimal_publisher/publisher_member_function_twenty",
+            "program": "${workspaceFolder}/install/test_pkg/lib/test_pkg/talker",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

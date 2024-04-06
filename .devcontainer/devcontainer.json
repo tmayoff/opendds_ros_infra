@@ -22,7 +22,8 @@
 				"ms-vscode.cmake-tools",
 				"ms-python.python",
 				"llvm-vs-code-extensions.vscode-clangd",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"mkhl.direnv"
 			]
 		}
 	},

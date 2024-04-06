@@ -1,9 +1,12 @@
 build
 install
 log
-src
 .devenv
 .direnv
 .cache
 
 *.out
+core
+
+src/*
+!src/test_pkg
