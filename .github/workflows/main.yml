@@ -18,6 +18,9 @@ jobs:
         with:
           submodules: true
 
+      - name: rust-toolchain
+        uses: actions-rs/toolchain@v1.0.6    
+
       - name: Setup ros workspace
         run: ./rmw_build/create_workspace.sh
 
@@ -29,4 +32,4 @@ jobs:
         run: ./rmw_build/build_all.sh
 
       - name: Run CI tests
-        run: ./rmw_build/run_ci_test.sh
+        run: cargo run -p ci_tests

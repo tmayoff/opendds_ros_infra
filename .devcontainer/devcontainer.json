@@ -8,13 +8,7 @@
 	// 	"context": "../",
 	// 	"target": "ros"
 	// },
-	"features": {
-		"ghcr.io/christophermacgown/devcontainer-features/direnv:1": {
-			"autoEnable": true,
-			"architecture": "amd64",
-			"version": "latest"
-		}
-	},
+	"features": {},
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -29,15 +23,15 @@
 	},
 	"runArgs": [
 		"--gpus=all",
-		"--network=host"
+		"--network=host",
+		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z",
 	],
-
+	"workspaceMount": "",
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "cat /etc/os-release",
-
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "devcontainer"
+	"remoteUser": "devcontainer",
+	"containerUser": "devcontainer"
 }
