@@ -18,8 +18,9 @@ jobs:
         with:
           submodules: true
 
-      - name: rust-toolchain
-        uses: actions-rs/toolchain@v1.0.6    
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
 
       - name: Setup ros workspace
         run: ./rmw_build/create_workspace.sh
