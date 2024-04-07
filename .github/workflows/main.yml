@@ -33,6 +33,7 @@ jobs:
         run: ./rmw_build/build_all.sh
 
       - name: Run CI tests
+        shell: bash
         run: |
-          . .envrc \
+          source .envrc \
           cargo run -p ci_tests
