@@ -70,10 +70,12 @@ fn main() -> Result<()> {
         println!("Stdout:\n{}", stdout);
         println!("Stderr:\n{}", stderr);
 
-        if stderr.contains("I heard: 'Hello, world!") {
-           return Ok(()); 
+        if !stderr.contains("I heard: 'Hello, world!") {
+            return Err(anyhow::anyhow!("Subscriber didn't receive any samples"));
         }
-    
-        Err(anyhow::anyhow!("Subscriber didn't receive any samples"))
+
+        println!("Tests succeeded");
+
+        Ok(())
     })
 }
