@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl https://apt.kitware.com/kitware-archive.sh -o kitware-archive.sh && chmod +x kitware-archive.sh && ./kitware-archive.sh
 RUN apt-get -y update && apt-get -y install cmake
 
-RUN git clone https://github.com/OpenDDS/OpenDDS.git -b DDS-3.27 /opt/OpenDDS
+RUN git clone https://github.com/OpenDDS/OpenDDS.git -b DDS-3.26.1 /opt/OpenDDS
 
 # WORKDIR /opt/OpenDDS
 # RUN cmake -S . -B build -G Ninja 
@@ -37,20 +37,3 @@ ENV ACE_ROOT=/usr/local/share/ace \
     TAO_ROOT=/usr/local/share/tao \
     DDS_ROOT=/usr/local/share/dds \
     MPC_ROOT=/usr/local/share/MPC
-
-WORKDIR /opt/workspace
-
-FROM opendds as ros
-
-ARG USERNAME=devcontainer
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-
-RUN groupadd --gid $USER_GID $USERNAME \
-    && adduser --uid $USER_UID --gid $USER_GID --shell /bin/bash $USERNAME \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
-
-RUN apt-get update -y && apt-get upgrade -y
-
-RUN apt-get install -y ros-humble-turtlesim

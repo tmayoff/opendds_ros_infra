@@ -2,12 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
 	"name": "ROS2 & OpenDDS",
-	"image": "ghcr.io/tmayoff/opendds_ros_infra",
-	// "build": {
-	// 	"dockerfile": "../Dockerfile",
-	// 	"context": "../",
-	// 	"target": "ros"
-	// },
+	// "image": "ghcr.io/tmayoff/opendds_ros_infra",
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "../"
+	},
 	"features": {},
 	"customizations": {
 		"vscode": {
@@ -24,7 +23,7 @@
 	"runArgs": [
 		"--gpus=all",
 		"--network=host",
-		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z",
+		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
 	],
 	"workspaceMount": "",
 	// Uncomment the next line to run commands after the container is created.
@@ -32,6 +31,12 @@
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	"containerUser": "devcontainer",
+	"containerEnv": {
+		"HOME": "/home/devcontainer"
+	},
 	"remoteUser": "devcontainer",
-	"containerUser": "devcontainer"
+	"remoteEnv": {
+		"HOME": "/home/devcontainer"
+	}
 }
